@@ -1,7 +1,7 @@
 defmodule Nemo.ConfigTest do
   use ExUnit.Case
 
-  alias Tide.Config
+  alias Nemo.Config
 
   setup_all do
     vars = [key1: :val1,
