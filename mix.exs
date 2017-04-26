@@ -10,7 +10,9 @@ defmodule Nemo.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      aliases: aliases(),
-     deps: deps()]
+     deps: deps(),
+     test_coverage: [tool: ExCoveralls],
+     preferred_cli_env: [coveralls: :test]]
   end
 
   # Configuration for the OTP application.
@@ -37,7 +39,9 @@ defmodule Nemo.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:ex_machina, "~> 2.0", only: :test},
+     {:excoveralls, "~> 0.6.3"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
