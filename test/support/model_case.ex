@@ -13,6 +13,9 @@ defmodule Nemo.ModelCase do
   """
 
   use ExUnit.CaseTemplate
+  use ExMachina.Ecto, repo: Nemo.Repo
+
+  alias Nemo.User
 
   using do
     quote do
@@ -62,4 +65,16 @@ defmodule Nemo.ModelCase do
     |> Ecto.Changeset.traverse_errors(&Nemo.ErrorHelpers.translate_error/1)
     |> Enum.flat_map(fn {key, errors} -> for msg <- errors, do: {key, msg} end)
   end
+
+  ## Factories
+
+  def user_params_factory do
+    %{
+      id: 42,
+      email: "john@rambo.com",
+      token: "1234"
+    }
+  end
+
+
 end
