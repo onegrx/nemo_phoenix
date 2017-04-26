@@ -1,13 +1,8 @@
 defmodule Nemo.Config do
 
-  def get(key, default) do
+  def get(key, default \\ :undefined) do
     config = Application.get_all_env(:nemo)
     get_value(key, config, default)
-  end
-
-  def get(key) do
-    config = Application.get_all_env(:nemo)
-    get_value(key, config, :undefined)
   end
 
   defp get_value([head | tail], config, default) do
@@ -15,19 +10,10 @@ defmodule Nemo.Config do
     get_value(tail, outer_val, default)
   end
 
-  defp get_value(_, config, _) when not is_list(config) do
-    config
-  end
+  defp get_value([], config, _), do: config
 
   defp get_value(key, config, default) do
-    case config do
-      [] -> default
-      _ ->
-        case hd(config) do
-          {^key, val} -> val
-          _ -> get_value(key, tl(config), default)
-        end
-    end
+    Keyword.get(config, key, default)
   end
 
 end
