@@ -6,6 +6,7 @@ defmodule Nemo.User do
     field :token, :string
     field :password, :string
     field :username, :string
+
     timestamps()
 
     many_to_many :words, Nemo.Word,
