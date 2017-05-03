@@ -6,11 +6,11 @@ defmodule Nemo.User do
     field :token, :string
     field :password, :string
     field :username, :string
+    timestamps()
 
     many_to_many :words, Nemo.Word,
                  join_through: Nemo.UserWord
 
-    timestamps()
   end
 
   @required_fields [:email, :token, :password, :username]
