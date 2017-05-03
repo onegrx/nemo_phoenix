@@ -21,6 +21,8 @@ defmodule Nemo.Router do
     get "/hello/:messenger", HelloController, :show
     get "/", RootController, :index
 
+    resources "/registrations", RegistrationController, only: [:new, :create]
+
 
   end
 
