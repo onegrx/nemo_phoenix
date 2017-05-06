@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Hello Nemo!</title>
+    <title>Nemo</title>
+    <link rel="shortcut icon" type="image/png" href="/assets/favicon.png"/>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   </head>
 
   <body>
     <div class="container">
+
       <header class="header">
         <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
+          <ul class="nav nav-pills pull-justified">
+            <li>
+              <%= link "Home", to: page_path(@conn, :index) %>
+            </li>
             <li>
               <%= link "Login", to: session_path(@conn, :new) %>
             </li>
@@ -24,7 +25,6 @@
             </li>
           </ul>
         </nav>
-        <span class="logo"></span>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>

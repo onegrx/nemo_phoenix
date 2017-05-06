@@ -24,7 +24,7 @@ form.link, form.button {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+  /*border-bottom: 1px solid #e5e5e5;*/
 }
 .logo {
   width: 519px;
@@ -58,10 +58,6 @@ form.link, form.button {
   border-bottom: 1px solid #e5e5e5;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 35px 0;
-}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
