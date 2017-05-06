@@ -17,12 +17,22 @@
             <li>
               <%= link "Home", to: page_path(@conn, :index) %>
             </li>
+
+            <%= if logged_in?(@conn) do %>
+
+              <li><%= current_user(@conn).email %></li>
+              <li><%= link "Logout", to: session_path(@conn, :delete), method: :delete %></li>
+            <% else %>
+
             <li>
               <%= link "Login", to: session_path(@conn, :new) %>
             </li>
             <li>
               <%= link "Register", to: registration_path(@conn, :new) %>
             </li>
+
+            <% end %>
+
           </ul>
         </nav>
       </header>

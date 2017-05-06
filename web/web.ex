@@ -52,6 +52,9 @@ defmodule Nemo.Web do
       import Nemo.Router.Helpers
       import Nemo.ErrorHelpers
       import Nemo.Gettext
+
+      import Nemo.Session, only: [current_user: 1, logged_in?: 1]
+
     end
   end
 
