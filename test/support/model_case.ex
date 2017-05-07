@@ -15,8 +15,6 @@ defmodule Nemo.ModelCase do
   use ExUnit.CaseTemplate
   use ExMachina.Ecto, repo: Nemo.Repo
 
-  alias Nemo.User
-
   using do
     quote do
       alias Nemo.Repo
@@ -70,10 +68,17 @@ defmodule Nemo.ModelCase do
 
   def user_params_factory do
     %{
-      id: 42,
       email: "john@rambo.com",
-      token: "1234"
+      password: "1234",
+      token: "asdf"
     }
+  end
+
+  def word_params_factory do
+    %{
+      word: "hello",
+      translated: "cześć"
+      }
   end
 
 
