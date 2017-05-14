@@ -5,6 +5,7 @@ defmodule Nemo.User do
     field :email, :string
     field :token, :string
     field :password, :string
+    field :username, :string
 
     many_to_many :words, Nemo.Word,
                  join_through: Nemo.UserWord
@@ -12,7 +13,7 @@ defmodule Nemo.User do
     timestamps()
   end
 
-  @required_fields [:email, :token, :password]
+  @required_fields [:email, :token, :password, :username]
 
   @doc """
   Builds a changeset based on the `struct` and `params`.

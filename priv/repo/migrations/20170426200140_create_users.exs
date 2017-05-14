@@ -6,6 +6,7 @@ defmodule Nemo.Repo.Migrations.CreateUsers do
       add :email, :string
       add :token, :string
       add :password, :string
+      add :username, :string
 
       timestamps()
     end

@@ -70,7 +70,8 @@ defmodule Nemo.ModelCase do
     %{
       email: "john@rambo.com",
       password: "1234",
-      token: "asdf"
+      token: "asdf",
+      username: "jasio"
     }
   end
 
