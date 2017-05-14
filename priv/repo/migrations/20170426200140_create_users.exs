@@ -3,6 +3,10 @@ defmodule Nemo.Repo.Migrations.CreateUsers do
 
   def change do
     create table(:users) do
+      add :email, :string
+      add :token, :string
+      add :password, :string
+      add :username, :string
 
       timestamps()
     end
