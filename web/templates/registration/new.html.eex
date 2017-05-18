@@ -8,6 +8,12 @@
   <% end %>
 
   <div class="form-group">
+    <label>Username</label>
+    <%= text_input f, :username, class: "form-control" %>
+    <%= error_tag f, :username %>
+  </div>
+
+  <div class="form-group">
     <label>Email</label>
     <%= email_input f, :email, class: "form-control" %>
     <%= error_tag f, :email %>
@@ -23,3 +29,6 @@
     <%= submit "Signup", class: "btn btn-primary" %>
   </div>
 <% end %>
+
+<p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+<p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>

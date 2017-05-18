@@ -3,8 +3,8 @@ defmodule Nemo.Registration do
 
   def create(changeset, repo) do
     changeset
-    |> put_change(:crypted_password, hashed_password(changeset.params["password"]))
-    |> put_change(:token, generate_unique_token(changeset.params["email"])) #TODO username
+    |> put_change(:password, hashed_password(changeset.params["password"]))
+    |> put_change(:token, generate_unique_token(changeset.params["username"]))
     |> repo.insert()
   end
 

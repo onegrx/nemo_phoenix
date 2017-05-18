@@ -1,14 +1,11 @@
 defmodule Nemo.User do
   use Nemo.Web, :model
 
-  @required_fields ~w(email password)
-
   schema "users" do
     field :email, :string, unique: true
     field :username, :string, unique: true
     field :token, :string
     field :password, :string
-    field :username, :string
 
     timestamps()
 
@@ -17,14 +14,14 @@ defmodule Nemo.User do
 
   end
 
-  @required_fields [:email, :token, :password, :username]
+  @required_fields [:email, :password, :username]
 
   @doc """
   Builds a changeset based on the `struct` and `params`.
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, @required_fields)
+    |> cast(params, [:email, :password, :username, :token])
     |> validate_required(@required_fields)
     |> unique_constraint(:email)
     |> unique_constraint(:username)
