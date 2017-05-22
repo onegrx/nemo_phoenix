@@ -10,7 +10,7 @@ defmodule Nemo.RegistrationController do
   def create(conn, %{"user" => user_params}) do
     changeset = User.changeset(%User{}, user_params)
 
-    case Nemo.Registration.create(changeset, Nemo.Repo) do
+    case Nemo.Repo.insert(changeset) do
       {:ok, _changeset} ->
         conn
         |> put_flash(:info, "Your account was created")
