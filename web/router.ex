@@ -24,11 +24,10 @@ defmodule Nemo.Router do
     post   "/login",  SessionController, :create
     delete "/logout", SessionController, :delete
 
-
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Nemo do
-  #   pipe_through :api
-  # end
+   scope "/api", Nemo.Api do
+     pipe_through :api
+     get "/stats", TranslationController, :index
+   end
 end
