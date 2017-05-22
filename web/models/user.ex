@@ -6,14 +6,15 @@ defmodule Nemo.User do
     field :email, :string, unique: true
     field :username, :string, unique: true
     field :token, :string
-    field :password, :string
+    field :password, Nemo.User.PasswordType
 
     timestamps()
 
     many_to_many :words, Nemo.Word,
                  join_through: Nemo.UserWord
-
   end
+
+  @token_suffix_length 7
 
   @required_fields [:email, :password, :username]
 
@@ -22,25 +23,27 @@ defmodule Nemo.User do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:email, :password, :username, :token])
+    |> cast(params, @required_fields)
     |> validate_required(@required_fields)
     |> unique_constraint(:email)
     |> unique_constraint(:username)
     |> validate_format(:email, ~r/@/)
     |> validate_length(:password, min: 5)
-    |> hash_password
-    |> generate_unique_token
+    |> put_token()
   end
 
-  defp hash_password(changeset) do
-    %{changeset | password: Comeonin.Bcrypt.hashpwsalt(changeset.password)}
+  def put_token(changeset) do
+    case get_field(changeset, :username) do
+      nil -> changeset
+      username -> put_change(changeset, :token, get_token(username))
+    end
   end
 
-  defp generate_unique_token(changeset, length \\ 7) do
-    token = :crypto.strong_rand_bytes(length)
-      |> Base.url_encode64
-      |> binary_part(0, length)
-    %{changeset | token: changeset.username <> "-" <> token}
+  defp get_token(username) do
+    token = :crypto.strong_rand_bytes(@token_suffix_length)
+            |> Base.url_encode64
+            |> binary_part(0, @token_suffix_length)
+    username <> "-" <> token
   end
 
 end
