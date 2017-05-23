@@ -6,7 +6,8 @@ html {
 
 body {
   text-align: center;
-  margin: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 h1 {
@@ -47,4 +48,8 @@ input[type=submit] {
     border:0 none;
     cursor:pointer;
     border-radius: 7px;
+}
+
+.oldtoken {
+  margin-top: 20px;
 }

@@ -4,14 +4,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   if(localStorage["token"]) {
-    var x = document.getElementById("token");
-    if(x) x.value = localStorage["token"];
+    var x = document.getElementById("old");
+    if(x) x.innerHTML = localStorage["token"];
   }
 
   var s = document.getElementById("submit")
   if(s) {
     s.addEventListener("click", handler);
   }
+
+
 });
 
 function handler() {
