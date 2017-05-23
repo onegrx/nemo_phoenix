@@ -1,1 +1,56 @@
 /* This file is for your main application css. */
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  color: white !important;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Lato', sans-serif;
+  background: linear-gradient(to top, #b5ac49, #3ca55c);
+  /*Cannot decide which backgound TODO*/
+  /*background-image: -webkit-radial-gradient(50% 50%, circle, #F67938 29%, #EF4734 120%);*/
+  /*background: linear-gradient(to top, #8e0e00, #1f1c18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */*/
+}
+
+nav {
+  float: right;
+  height: 30px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.nav>li>a, .nav>li>form>a{
+  color: white;
+  opacity: 0.7;
+  padding: 0px;
+}
+
+
+
+.nav>li>a:focus, .nav>li>a:hover, .nav>li>form>a:hover{
+  text-decoration: none;
+  background-color: transparent;
+  color: white;
+  opacity: 1;
+  border-bottom: 1px solid white;
+  border-radius: 0px;
+  padding-bottom: 2px;
+}
+
+.nav>li {
+  padding-left: 20px;
+}
+
+main {
+  padding-top: 30px;
+}
+
+.btn-primary {
+  /*color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;*/
+}

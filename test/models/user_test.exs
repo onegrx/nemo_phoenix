@@ -19,8 +19,10 @@ defmodule Nemo.Model.UserTest do
     changeset = User.changeset(%User{}, params)
 
     refute changeset.valid?
+
     assert email: {"can't be blank", [validation: :required]} in
       changeset.errors
+
   end
 
 end

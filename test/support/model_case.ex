@@ -69,7 +69,7 @@ defmodule Nemo.ModelCase do
   def user_params_factory do
     %{
       email: "john@rambo.com",
-      password: "1234",
+      password: "12345",
       token: "asdf",
       username: "jasio"
     }

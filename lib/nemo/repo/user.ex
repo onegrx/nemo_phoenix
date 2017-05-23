@@ -19,6 +19,15 @@ defmodule Nemo.Repo.User do
   end
 
   @doc """
+  Function return query for retriving `Nemo.User` with token
+  """
+  @spec by_token(Ecto.Queryable.t | User.t, String.t) :: Ecto.Query.t
+  def by_token(query \\ User, token) do
+    from t in query,
+      where: t.token == ^token
+  end
+
+  @doc """
   Function return query for retrivieng `Nemo.User` with preloaded and given
   amount of `Nemo.Word`'s
   """

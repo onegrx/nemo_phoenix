@@ -17,15 +17,17 @@ defmodule Nemo.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/hello", HelloController, :index
-    get "/hello/:messenger", HelloController, :show
-    get "/", RootController, :index
 
+    resources "/registrations", RegistrationController, only: [:new, :create]
+
+    get    "/login",  SessionController, :new
+    post   "/login",  SessionController, :create
+    delete "/logout", SessionController, :delete
 
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Nemo do
-  #   pipe_through :api
-  # end
+   scope "/api", Nemo.Api do
+     pipe_through :api
+     get "/stats", TranslationController, :index
+   end
 end
