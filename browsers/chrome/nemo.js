@@ -1,7 +1,9 @@
 function getword(info,tab) {
 
     var xhr = new XMLHttpRequest();
-    var token = "bart-CqB38Dv"
+
+    var token = localStorage["token"];
+    if(!token) token = "invalid";
 
     var word = info.selectionText;
     console.log("Searching for " + word);
