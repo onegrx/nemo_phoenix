@@ -5,15 +5,20 @@
   </head>
   <body>
     <h1>Nemo</h1>
-    <form>
+    <form id="token-form">
       <ul>
         <li>
-          <input type="text" class="token" name="token">
+          <input id="token" type="text" name="token">
         </li>
         <li>
-          <input type="submit" value="OK">
+          <input id="submit" type="submit" value="OK">
         </li>
       </ul>
     </form>
+
+    <span id="saved" hidden="true">
+      Token zapisany.
+    </span>
+    <script src="storage.js"></script>
   </body>
 </html>

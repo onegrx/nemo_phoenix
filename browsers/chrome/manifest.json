@@ -6,7 +6,8 @@
 
     "permissions": [
         "contextMenus",
-        "http://localhost:4000/api"
+        "http://localhost:4000/api",
+        "storage"
     ],
 
     "browser_action": {
@@ -14,6 +15,6 @@
     },
 
     "background": {
-        "scripts": ["nemo.js"]
+        "scripts": ["nemo.js", "storage.js"]
     }
 }
