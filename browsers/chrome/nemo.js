@@ -1,5 +1,8 @@
 function getword(info,tab) {
 
+    var xhr = new XMLHttpRequest();
+    var token = "bart-CqB38Dv"
+
     var word = info.selectionText;
     console.log("Searching for " + word);
 
@@ -7,22 +10,27 @@ function getword(info,tab) {
         url: "https://www.diki.pl/slownik-angielskiego/?q=" + word,
     })
 
-    var xhr = new XMLHttpRequest();
+    var client = new XMLHttpRequest();
+    client.open("GET", "http://www.transltr.org/api/translate?text=" + word + "&to=pl&from=en");
+    client.setRequestHeader("Accept", "application/json");
+    client.onload = function(e) {
+      console.log("Response: " + client.responseText);
+      var jsonResponse = JSON.parse(client.responseText);
+      translated = jsonResponse["translationText"].toLowerCase();
+      console.log(translated);
 
-    var token = "bart-CqB38Dv"
-    var translated = "sth"
+      var url = "http://localhost:4000/api/stats?token=" + token
+        + "&word=" + word
+        + "&translated=" + translated
 
-    var url = "http://localhost:4000/api/stats?token=" + token
-      + "&word=" + word
-      + "&translated=" + translated
+      xhr.open("GET", url, true);
+      xhr.onload = function(e) {
+        console.log("Response: " + xhr.responseText);
+      }
+      xhr.send();
 
-    xhr.open("GET", url, true);
-    xhr.onload = function(e) {
-      console.log("Response: " + xhr.responseText);
     }
-    xhr.send();
-
-
+    client.send();
 }
 
 chrome.contextMenus.create({
