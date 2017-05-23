@@ -32,6 +32,7 @@ input[type="text"] {
   padding: 7px;
   border: 1px solid black;
   border-radius: 7px;
+  text-align: center;
 }
 
 input[type="text"]:focus {
