@@ -16,9 +16,11 @@ function getword(info,tab) {
       + "&word=" + word
       + "&translated=" + translated
 
-    xhr.open("GET", url, false);
+    xhr.open("GET", url, true);
+    xhr.onload = function(e) {
+      console.log("Response: " + xhr.responseText);
+    }
     xhr.send();
-    console.log("Response: " + xhr.responseText);
 
 
 }
