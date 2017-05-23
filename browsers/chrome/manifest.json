@@ -5,7 +5,8 @@
     "description": "Transate foreign words faster and keep track of your seach history.",
 
     "permissions": [
-        "contextMenus"
+        "contextMenus",
+        "http://localhost:4000/api"
     ],
 
     "background": {
