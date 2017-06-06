@@ -1,0 +1,55 @@
+html {
+  background-color: #f6a038;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+form {
+  text-align: center;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  padding: 7px;
+  border: 1px solid black;
+  border-radius: 7px;
+  text-align: center;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: 1px solid orange;
+  box-shadow: 1px 1px 5px 0px rgba(247,185,0,1);
+}
+
+input[type=submit] {
+    padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    border-radius: 7px;
+}
+
+.oldtoken {
+  margin-top: 20px;
+}
