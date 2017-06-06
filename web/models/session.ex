@@ -12,7 +12,7 @@ defmodule Nemo.Session do
   defp authenticate(user, password) do
     case user do
       nil -> false
-      _   -> Comeonin.Bcrypt.checkpw(password, user.crypted_password)
+      _   -> Comeonin.Bcrypt.checkpw(password, user.password)
     end
   end
 
