@@ -23,6 +23,7 @@ defmodule Nemo.Router do
     get    "/login",  SessionController, :new
     post   "/login",  SessionController, :create
     delete "/logout", SessionController, :delete
+    get    "/words",  WordsController,   :index
 
   end
 

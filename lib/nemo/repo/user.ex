@@ -12,6 +12,12 @@ defmodule Nemo.Repo.User do
   Module containting composable Ecto queries
   """
 
+  @spec by_id(queryable, String.t) :: Ecto.Query.t
+  def by_id(query \\ User, id) do
+    from t in query,
+      where: t.id == ^id
+  end
+
   @doc """
   Function return query for retriving `Nemo.User` with email address
   """
