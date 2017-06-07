@@ -36,10 +36,12 @@ defmodule Nemo.Repo.User do
   """
   @spec with_words(queryable, limit_with_infinity) :: Ecto.Query.t
   def with_words(query \\ User, limit \\ 10) do
-    words_query = from w in Word,
-                    limit: ^limit
+    words_query = get_words_query(limit)
     from t in query,
       preload: [words: ^words_query]
   end
+
+  defp get_words_query(:infinity), do: from w in Word
+  defp get_words_query(limit),     do: from w in Word, limit: ^limit
 
 end
