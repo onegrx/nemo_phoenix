@@ -6,25 +6,26 @@ html {
 body {
   height: 100%;
   margin: 0;
-  color: white !important;
-  background-repeat: no-repeat;
+  color: black !important;
+  background-image: url("../images/bg.png");
+  /*background-repeat: no-repeat;*/
   background-attachment: fixed;
   font-family: 'Lato', sans-serif;
-  background: linear-gradient(to top, #b5ac49, #3ca55c);
+  /*background: linear-gradient(to top, #b5ac49, #3ca55c);*/
   /*Cannot decide which backgound TODO*/
   /*background-image: -webkit-radial-gradient(50% 50%, circle, #F67938 29%, #EF4734 120%);*/
   /*background: linear-gradient(to top, #8e0e00, #1f1c18); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */*/
 }
 
 nav {
-  float: right;
+  /*float: right;*/
   height: 30px;
   font-size: 18px;
   text-transform: uppercase;
 }
 
 .nav>li>a, .nav>li>form>a{
-  color: white;
+  color: black;
   opacity: 0.7;
   padding: 0px;
 }
@@ -34,9 +35,9 @@ nav {
 .nav>li>a:focus, .nav>li>a:hover, .nav>li>form>a:hover{
   text-decoration: none;
   background-color: transparent;
-  color: white;
+  color: #f0ad4e;
   opacity: 1;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #f0ad4e;
   border-radius: 0px;
   padding-bottom: 2px;
 }
@@ -53,4 +54,67 @@ main {
   /*color: #fff;
   background-color: #5cb85c;
   border-color: #4cae4c;*/
+}
+
+td {
+  border: 1px solid rgb(129, 129, 129);
+}
+
+tr:hover {
+  color: #f0ad4e;
+}
+
+.box-feature {
+  /*margin: 0 10px;
+  width: 190px;*/
+
+
+  display:inline-block;
+float:none;
+/* reset the text-align */
+/* inline-block space fix */
+margin-right:-4px;
+}
+
+.box-feature-container {
+  text-align: center;
+}
+
+.box-feature i {
+  padding-top: 15px;
+}
+
+.inner {
+  /*background-color: rgba(230, 173, 78, 1);*/
+  background-color: #ddd;
+  border: 1px solid rgb(129, 129, 129);
+  padding: 0 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 20px rgba(80,80,80,1);
+}
+
+div#about {
+  text-align: center;
+}
+
+#about h1 {
+  /*text-shadow: 1px 1px rgba(230, 173, 78, 1);*/
+}
+
+.lead {
+  width: 700px;
+  font-size: 20px;
+}
+
+button#chrome {
+  margin-bottom: 30px;
+  background-color: #e6e6e6;
+}
+
+button#chrome:hover {
+  background-color: #ddd;
+}
+
+.button-desc {
+  margin-left: 10px;
 }
