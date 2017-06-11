@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="<%= static_path(@conn, "/font-awesome/css/font-awesome.min.css") %>">
+    <script src="<%= static_path(@conn, "/js/utils.js") %>"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
 
   <body>
@@ -25,7 +27,7 @@
 
             <%= if logged_in?(@conn) do %>
 
-              <li><%= current_user(@conn).username %></li>
+              <li><%= link current_user(@conn).username, to: account_path(@conn, :index), method: :get %></li>
               <li><%= link "Words", to: words_path(@conn, :index), method: :get %></li>
               <li><%= link "Logout", to: session_path(@conn, :delete), method: :delete %></li>
 
@@ -53,5 +55,6 @@
 
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+
   </body>
 </html>

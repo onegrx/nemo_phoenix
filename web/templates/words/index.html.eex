@@ -1,5 +1,4 @@
-<p>Token: <%= @token %></p>
-
+<h1>Words</h1>
 
 <table class="table table-bordered table-hover">
   <%= for w <- @words do %>

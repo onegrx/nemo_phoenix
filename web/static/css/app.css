@@ -118,3 +118,21 @@ button#chrome:hover {
 .button-desc {
   margin-left: 10px;
 }
+
+.account {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.account>div {
+  padding: 5px 0px;
+}
+
+.account .acc-label {
+  font-weight: bold;
+}
+
+#copy-token {
+  /*height: 28px;*/
+  width: 250px;
+}

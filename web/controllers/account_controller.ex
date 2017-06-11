@@ -1,4 +1,4 @@
-defmodule Nemo.WordsController do
+defmodule Nemo.AccountController do
   use Nemo.Web, :controller
 
   alias Nemo.Repo
@@ -7,9 +7,8 @@ defmodule Nemo.WordsController do
     id = Plug.Conn.get_session(conn, :current_user)
     if id do
       user = Repo.User.by_id(id)
-      |> Repo.User.with_words
       |> Repo.one()
-      render conn, "index.html", words: user.words
+      render conn, "index.html", token: user.token
     else
       conn
       |> redirect(to: "/")
