@@ -1,20 +1,22 @@
 # Nemo
 
-To start your Phoenix app:
+## About
+
+Nemo is the app which aims to boost your language memory speed. It consists of two parts:
+ 
+ * Chrome extension to translating words
+ * Nemo backend with staticstics and user management.
+ 
+
+## Installing locally
+
+Nemo uses PostgreSQL as a database, so make sure you have it installed.
+To start Nemo app:
 
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `npm install`
   * Start Phoenix endpoint with `mix phoenix.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
-
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+Furthermore, download Chrome Extension from this repository and load as unpacked extension having Developer mode turned on.

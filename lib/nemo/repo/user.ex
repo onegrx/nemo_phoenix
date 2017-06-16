@@ -8,6 +8,7 @@ defmodule Nemo.Repo.User do
   @typep limit_with_infinity :: integer | :infinity
   @typep queryable :: Ecto.Queryable.t | User.t
 
+
   @moduledoc """
   Module containting composable Ecto queries
   """
