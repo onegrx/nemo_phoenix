@@ -1,0 +1,10 @@
+<h1>Words</h1>
+
+<table class="table table-bordered table-hover">
+  <%= for w <- @words do %>
+    <tr>
+      <td><%= w.word %></td>
+      <td><%= w.translated %></td>
+    </tr>
+  <% end %>
+</table>

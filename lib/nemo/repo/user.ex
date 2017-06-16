@@ -6,11 +6,18 @@ defmodule Nemo.Repo.User do
   alias Nemo.Word
 
   @typep limit_with_infinity :: integer | :infinity
-  @typep queryable :: queryable
+  @typep queryable :: Ecto.Queryable.t | User.t
+
 
   @moduledoc """
   Module containting composable Ecto queries
   """
+
+  @spec by_id(queryable, String.t) :: Ecto.Query.t
+  def by_id(query \\ User, id) do
+    from t in query,
+      where: t.id == ^id
+  end
 
   @doc """
   Function return query for retriving `Nemo.User` with email address

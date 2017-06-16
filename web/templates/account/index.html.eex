@@ -1,0 +1,40 @@
+<h1>Account settings</h1>
+
+<h3> Personal details</h3>
+
+<div class="account">
+
+  <div class="row">
+    <div class="col-md-2 acc-label">Username:</div>
+    <div class="col-md-3"><%=current_user(@conn).username%></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2 acc-label">Email:</div>
+    <div class="col-md-3"><%=current_user(@conn).email%></div>
+  </div>
+
+</div>
+
+<h3>Token</h3>
+
+<div class="account">
+
+  <div class="row">
+    <div class="col-md-2 acc-label">Token:</div>
+    <div id="text-token" class="col-md-3"><%=current_user(@conn).token%></div>
+
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-sm-5">
+        <button onclick="copyToClipboard('#text-token')" type="button" id="copy-token" class="btn btn-default">
+          <span>Copy to clipboard</span>
+        </button>
+    </div>
+
+  </div>
+
+</div>

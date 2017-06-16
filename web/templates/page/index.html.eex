@@ -1,39 +1,51 @@
-<div >
+<div id="about">
   <h1>Nemo</h1>
   <p class="lead">
-    Keep the list of foreign words you translated so far<br />
-    Learn faster with confidence
+    Nemo stands for <i>New Memo</i> and as such it aims to help you learn foreign words faster.
+    This is accomplished by keeping the list of words you translated so far with counter for each of them.
+    Start using Nemo by downloading Google Chrome browser extension below.
   </p>
 </div>
 
-<!-- <div class="row marketing">
-  <div class="col-lg-6">
-    <h4>Resources</h4>
-    <ul>
-      <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
-      </li>
-      <li>
-        <a href="https://hexdocs.pm/phoenix">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-    </ul>
+
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="text-center">
+      <button type="button" id="chrome" class="btn btn-default">
+        <span><i style="vertical-align: middle;" class="fa fa-chrome fa-2x" aria-hidden="true"></i></span>
+        <span class="button-desc">Nemo for Chrome</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row box-feature-container text-center">
+
+  <div class="col-md-4 box-feature text-center">
+  <div class="inner">
+    <i class="fa fa-globe fa-4x" aria-hidden="true"></i>
+    <h3>Translate</h1>
+    <p>foreign words directly from your broser</p>
+  </div>
   </div>
 
-  <div class="col-lg-6">
-    <h4>Help</h4>
-    <ul>
-      <li>
-        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
-      </li>
-      <li>
-        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
-      </li>
-    </ul>
+  <div class="col-md-4 box-feature text-center">
+  <div class="inner">
+    <i class="fa fa-graduation-cap fa-4x" aria-hidden="true"></i>
+    <h3>Learn</h1>
+    <p>faster taking advantage of translation counter</p>
   </div>
-</div> -->
+  </div>
+
+  <div class="col-md-4 box-feature text-center">
+  <div class="inner">
+    <i class="fa fa-book fa-4x" aria-hidden="true"></i>
+    <h3>Create</h1>
+    <p>your own domain specific personalized dictionary</p>
+  </div>
+  </div>
+
+</div>
