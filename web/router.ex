@@ -20,11 +20,11 @@ defmodule Nemo.Router do
 
     resources "/registrations", RegistrationController, only: [:new, :create]
 
-    get    "/login",  SessionController, :new
-    post   "/login",  SessionController, :create
-    delete "/logout", SessionController, :delete
-    get    "/words",  WordsController,   :index
-    get    "/account",AccountController, :index
+    get    "/login",    SessionController, :new
+    post   "/login",    SessionController, :create
+    delete "/logout",   SessionController, :delete
+    get    "/words",    WordsController,   :index
+    get    "/account",  AccountController, :index
 
   end
 

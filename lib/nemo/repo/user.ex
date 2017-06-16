@@ -6,7 +6,7 @@ defmodule Nemo.Repo.User do
   alias Nemo.Word
 
   @typep limit_with_infinity :: integer | :infinity
-  @typep queryable :: queryable
+  @typep queryable :: Ecto.Queryable.t | User.t
 
   @moduledoc """
   Module containting composable Ecto queries
