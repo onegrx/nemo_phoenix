@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+   nemo_db:
+     image: postgres
+     environment:
+       POSTGRES_DB: nemo_prod
+       POSTGRES_USER: nemo
+       POSTGRES_PASSWORD: nemo
+
+   nemo:
+     depends_on:
+       - nemo_db
+     image: nemo:latest
+     ports:
+       - "8000:80"
+     restart: always
+     environment:
+       NEMO_PSQL_HOST: nemo_db
+       NEMO_PSQL_USER: nemo
+       NEMO_PSQL_PASSWORD: nemo
