@@ -41,6 +41,7 @@ defmodule Nemo.Mixfile do
      {:gettext, "~> 0.11"},
      {:comeonin, "~> 1.0"},
      {:cowboy, "~> 1.0"},
+     {:distillery, "~> 0.9"},
      {:ex_machina, "~> 2.0", only: :test},
      {:excoveralls, "~> 0.6.3", only: :test}]
   end
