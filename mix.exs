@@ -42,7 +42,7 @@ defmodule Nemo.Mixfile do
      {:comeonin, "~> 1.0"},
      {:cowboy, "~> 1.0"},
      {:ex_machina, "~> 2.0", only: :test},
-     {:excoveralls, "~> 0.6.3"}]
+     {:excoveralls, "~> 0.6.3", only: :test}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
