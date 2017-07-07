@@ -11,6 +11,11 @@ sed -i -e "s/__NEMO_PSQL_HOST__/${NEMO_PSQL_HOST}/" ${SYSCONFIG}
 sed -i -e "s/__SECRET__/${SECRET}/" ${SYSCONFIG}
 
 #migrate db
-${RELEASE_PATH}/bin/nemo command 'Elixir.Nemo.Release.Task' migrate
+SUCCESS=1
+while [ ${SUCCESS} != 0 ]; do
+    ${RELEASE_PATH}/bin/nemo command 'Elixir.Nemo.Release.Task' migrate
+    SUCCESS=$?
+    sleep 2
+done
 ${RELEASE_PATH}/bin/nemo foreground
 
