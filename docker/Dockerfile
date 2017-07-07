@@ -12,7 +12,7 @@ RUN curl -O https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb &
 RUN mix local.hex --force && \
     mix local.rebar --force
 
-RUN git clone https://github.com/onegrx/nemo.git --branch docker
+RUN git clone https://github.com/onegrx/nemo.git --branch ${VSN}
 
 ADD prod.secret.exs /nemo/config/prod.secret.exs
 ADD prod.exs /nemo/config/prod.exs
