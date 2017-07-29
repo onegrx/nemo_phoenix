@@ -20,8 +20,8 @@ defmodule Nemo.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Nemo, []},
-     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger,
+                    :gettext, :phoenix_ecto, :postgrex, :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
@@ -41,8 +41,9 @@ defmodule Nemo.Mixfile do
      {:gettext, "~> 0.11"},
      {:comeonin, "~> 1.0"},
      {:cowboy, "~> 1.0"},
+     {:distillery, "~> 0.9"},
      {:ex_machina, "~> 2.0", only: :test},
-     {:excoveralls, "~> 0.6.3"}]
+     {:excoveralls, "~> 0.6.3", only: :test}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
