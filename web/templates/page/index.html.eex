@@ -12,10 +12,12 @@
 <div class="row">
   <div class="col-sm-12">
     <div class="text-center">
-      <button type="button" id="chrome" class="btn btn-default">
-        <span><i style="vertical-align: middle;" class="fa fa-chrome fa-2x" aria-hidden="true"></i></span>
-        <span class="button-desc">Nemo for Chrome</span>
-      </button>
+      <a href="https://github.com/onegrx/nemo/raw/master/browsers/nemo_chrome.zip">
+        <button type="button" id="chrome" class="btn btn-default">
+          <span><i style="vertical-align: middle;" class="fa fa-chrome fa-2x" aria-hidden="true"></i></span>
+          <span class="button-desc">Nemo for Chrome</span>
+        </button>
+    </a>
     </div>
   </div>
 </div>

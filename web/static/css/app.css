@@ -106,12 +106,12 @@ div#about {
   font-size: 20px;
 }
 
-button#chrome {
+a button#chrome {
   margin-bottom: 30px;
   background-color: #e6e6e6;
 }
 
-button#chrome:hover {
+a button#chrome:hover {
   background-color: #ddd;
 }
 
