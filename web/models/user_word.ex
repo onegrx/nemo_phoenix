@@ -8,6 +8,9 @@ defmodule Nemo.UserWord do
     belongs_to :user, Nemo.User
     belongs_to :word, Nemo.Word
 
+    has_many :domain, Nemo.Domain
+    has_many :translation, Nemo.Translation
+
     timestamps()
   end
 
